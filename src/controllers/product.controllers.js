@@ -13,10 +13,10 @@ export const getAllProducts = async (req, res) => {
 };
 
 export const getSpecificProduct = async (req, res) => {
-  const id = req.params.id;
   try {
+    const id = req.params.id;
     const getProducts = await prisma.products_prisma.findFirst({
-      where: { id: [id] },
+      where: { id: id },
       select: {
         productthumbnail: true,
         producttitle: true,
@@ -29,7 +29,7 @@ export const getSpecificProduct = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: error.message /*"An error occured while getting user"*/,
+      message: error.message /*"An error occured while getting product"*/,
     });
   }
 };
@@ -71,7 +71,7 @@ export const updateProduct = async (req, res) => {
       onoffer,
     } = req.body;
     const updateProduct = await prisma.products_prisma.update({
-      where: { id: [id] },
+      where: { id: id },
       data: {
         productthumbnail,
         producttitle,
@@ -93,7 +93,7 @@ export const deleteProduct = async (req, res) => {
   const id = req.params.id;
   try {
     const deleteProduct = await prisma.products_prisma.delete({
-      where: { id: [id] },
+      where: { id: id },
     });
     res.status(200).json(deleteProduct);
   } catch (error) {
