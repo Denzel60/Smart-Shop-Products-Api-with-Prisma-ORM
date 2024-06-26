@@ -14,13 +14,14 @@ datasource db {
 }
 
 model products_prisma {
-  id               String   @id @default(uuid())
-  createdAt        DateTime @default(now()) @map("created_at")
-  updatedAt        DateTime @default(now()) @map("updated_at")
-  productthumbnail String   @map("product_thumbnail")
-  producttitle     String   @map("product_title")
-  productcost      Int      @map("product_cost")
-  onoffer          Boolean  @map("on_offer")
+  id                 String   @id @default(uuid())
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @default(now()) @map("updated_at")
+  productthumbnail   String   @map("product_thumbnail")
+  producttitle       String   @map("product_title")
+  productdescription String   @map("product_description")
+  productcost        Int      @map("product_cost")
+  onoffer            Boolean  @map("on_offer")
 
   @@map("products_table")
 }
