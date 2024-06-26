@@ -48,7 +48,7 @@ For POST and PUT requests, go to the Body tab, select raw, and choose JSON forma
 Enter the request body as shown in the examples.
 Send the request and review the response.
 
-The server will run at http://localhost:3005. You can now make API requests, e.g., http://localhost:3000/feed.
+The server will run at http://localhost:3005. You can now make API requests, e.g., http://localhost:3005/products.
 Using the REST API
 You can access the REST API using the following endpoints:
 
